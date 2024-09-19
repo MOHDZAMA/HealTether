@@ -22,7 +22,7 @@ const Login = () => {
 
       if (res.status === 200) {
         dispatch(loginSuccess({ email }));
-        navigate("/dashboard");
+        navigate("/home");
       }
     } catch (err: any) {
       setError("Invalid credentials. Please try again.");

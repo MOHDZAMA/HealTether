@@ -52,7 +52,7 @@ function App() {
           path="/"
           element={isAuthenticated ? <Home /> : <Navigate to="/login" />}
         >
-          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="/" element={<Dashboard />} />
           <Route path="profile" element={<ComingSoon />} />
           <Route path="settings" element={<ComingSoon />} />
           <Route path="support" element={<ComingSoon />} />
