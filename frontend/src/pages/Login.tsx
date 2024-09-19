@@ -13,10 +13,9 @@ const Login = () => {
     }
   }, [isAuthenticated, navigate]);
   return (
-    <div>
-      <h1>Login</h1>
+    <>
       <AuthForm />
-    </div>
+    </>
   );
 };
 

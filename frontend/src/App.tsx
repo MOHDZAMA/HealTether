@@ -11,6 +11,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { loginSuccess, logoutSuccess } from "./stores/Slice/authSlice";
 import axiosInstance from "./utils/axiosConfig";
 import { RootState } from "./stores/store";
+import Dashboard from "./pages/Dashboard";
+import ComingSoon from "./pages/CommingSoon";
 
 function App() {
   const dispatch = useDispatch();
@@ -49,12 +51,13 @@ function App() {
         <Route
           path="/"
           element={isAuthenticated ? <Home /> : <Navigate to="/login" />}
-        />
+        >
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="profile" element={<ComingSoon />} />
+          <Route path="settings" element={<ComingSoon />} />
+          <Route path="support" element={<ComingSoon />} />
+        </Route>
         <Route path="/login" element={<Login />} />
-        <Route
-          path="/home"
-          element={isAuthenticated ? <Home /> : <Navigate to="/login" />}
-        />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
